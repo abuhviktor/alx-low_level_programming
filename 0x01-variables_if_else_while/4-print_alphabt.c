@@ -11,7 +11,7 @@ int main(void)
 {
 	int q;
 
-	for (q = 97; q < 123; i++)
+	for (q = 97; q < 123; q++)
 	{
 		if (q != 101 && q != 113)
 		{
