@@ -1,22 +1,24 @@
 #include <stdio.h>
 
 /**
- * main - Prints numbers between 0-9 and a-f.
+ * main - Prints 0-9.
  *
- * Return: Always 0 (Success)
+ * Return: Always 0.
  */
 int main(void)
 {
-	int i;
+	int num;
 
-	for (i = 48; i < 58; i++)
+	for (num = 0; num <= 9; num++)
 	{
-		putchar(i);
+		putchar((num % 10) + '0');
+		if (num == 9)
+			continue;
+		putchar(',');
+		putchar(' ');
 	}
-	for (i = 97; i < 103; i++)
-	{
-		putchar(i);
-	}
+
 	putchar('\n');
+
 	return (0);
 }
