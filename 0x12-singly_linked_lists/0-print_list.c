@@ -4,7 +4,7 @@
 #include "lists.h"
 
 /**
- * print_list - prints all the elements of a linked list
+ * print_list - prints all the elements of list
  * @h: pointer to the singly list
  *
  * Return: number of nodes printed
@@ -12,17 +12,20 @@
 
 size_t print_list(const list_t *h)
 {
-	size_t s = 0;
+	int count = 0;
 
 	while (h)
 	{
-		if (!h->str)
+		if (h->str == NULL)
+		{
 			printf("[0] (nil)\n");
+		}
 		else
-			printf("[%u] %s\n", h->len, h->str);
+		{
+		printf("[%d] %s\n", h->len, h->str);
+		}
+		count++;
 		h = h->next;
-		s++;
 	}
-
-	return (s);
+	return (count);
 }
