@@ -2,23 +2,23 @@
 #include <stdlib.h>
 
 /**
- * free_listint2 - function that frees a listint_t list
- * @head: a pointer of lists to the first element
+ * pop_listint - deletes the head node
+ * @head: head of the list
  *
- * Return: void
+ *Return: void
  */
 
-void free_listint2(listint_t **head)
+int pop_listint(listint_t **head)
 {
-	listint_t *next;
+	listint_t *start;
+	int n;
 
-	if (head == NULL)
-		return;
-	while (*head != NULL)
-	{
-		next = (*head)->next;
-		free(*head);
-		*head = next;
-	}
+	if (head == NULL || *head == NULL)
+		return (0);
+	start = *head;
+	*head = start->next;
+	n = start->n;
+	free(start);
+	return (n);
 }
 
